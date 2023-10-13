@@ -6,50 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>File</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css') }}"/>
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-    <style>
-        #draggable { width: 150px; height: 150px; padding: 0.5em; }
-    </style>
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script>
         $( function() {
           $( "#draggable" ).draggable();
         } );
-        $( function() {
-          $( "#sortable1" ).sortable();
-        } );
-        $( function() {
-          $( "#sortable2" ).sortable();
-        } );
     </script>
 </head>
 <body>
-    <ul id="sortable1">
-        <button id="add_button"
-                type="button" 
-                hx-post="/add/block"
-                hx-target="#add_button"
-                hx-swap="afterend">Add Block</button>
+    <button id="add_button"
+            type="button" 
+            hx-post="/add/block"
+            hx-target="#add_button"
+            hx-swap="afterend">
+            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 45.402 45.402" style="enable-background:new 0 0 45.402 45.402;" xml:space="preserve">
+                <g>
+                    <path d="M41.267,18.557H26.832V4.134C26.832,1.851,24.99,0,22.707,0c-2.283,0-4.124,1.851-4.124,4.135v14.432H4.141 c-2.283,0-4.139,1.851-4.138,4.135c-0.001,1.141,0.46,2.187,1.207,2.934c0.748,0.749,1.78,1.222,2.92,1.222h14.453V41.27 c0,1.142,0.453,2.176,1.201,2.922c0.748,0.748,1.777,1.211,2.919,1.211c2.282,0,4.129-1.851,4.129-4.133V26.857h14.435 c2.283,0,4.134-1.867,4.133-4.15C45.399,20.425,43.548,18.557,41.267,18.557z">
+                    </path>
+                </g>
+            </svg>
+        </button>
+
+    <div id="draggable" class="ui-widget-content">
+        <p>Write code here</p>
+        <div id="editable" contentEditable="true"></div>
+        <button type="button" hx-delete="/delete/block" hx-target="#draggable" hx-swap="outerHTML">
+            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" 
+            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 34.499 34.499" style="enable-background:new 0 0 34.499 34.499;" 
+            xml:space="preserve">
+            <path style="fill:#010002;" 
+            d="M25.8,6.84H8.699c-0.983,0-1.784,0.8-1.784,1.784v24.091c0,0.984,0.801,1.784,1.784,1.784h17.102 c0.982,0,1.783-0.8,1.783-1.784V8.624C27.585,7.64,26.784,6.84,25.8,6.84z M13.012,31.524c0,0.328-0.267,0.595-0.595,0.595H9.889 c-0.327,0-0.594-0.267-0.594-0.595V9.813c0-0.327,0.267-0.595,0.594-0.595h2.528c0.328,0,0.595,0.268,0.595,0.595V31.524z M19.108,31.524c0,0.328-0.268,0.595-0.595,0.595h-2.527c-0.328,0-0.595-0.267-0.595-0.595V9.813c0-0.327,0.267-0.595,0.595-0.595 h2.527c0.328,0,0.595,0.268,0.595,0.595V31.524z M25.205,31.524c0,0.328-0.267,0.595-0.594,0.595h-2.528 c-0.328,0-0.595-0.267-0.595-0.595V9.813c0-0.327,0.267-0.595,0.595-0.595h2.528c0.327,0,0.594,0.268,0.594,0.595V31.524z">
+            </path>
+            <path style="fill:#010002;" d="M8.253,5.501h17.696c0.657,0,1.188-0.532,1.188-1.189s-0.531-1.189-1.188-1.189H21.29V1.189 C21.29,0.533,20.757,0,20.101,0h-6.047c-0.656,0-1.189,0.533-1.189,1.189v1.934h-4.61c-0.655,0-1.189,0.532-1.189,1.189 C7.063,4.969,7.597,5.501,8.253,5.501z M15.242,2.379h3.668v0.743h-3.668C15.242,3.122,15.242,2.379,15.242,2.379z">
+            </path>
+            </svg>
+        </button>
+    </div>
     
-        <div id="draggable" class="ui-state-default">
-            <p>Drag me around</p>
-            <div id="editable" contentEditable="true"></div>
-            <button type="button" hx-delete="/delete/block" hx-target="#draggable" hx-swap="outerHTML">Delete</button>
-        </div>
-        <div id="draggable" class="ui-state-default">
-            <p>Drag me around</p>
-            <div id="editable" contentEditable="true"></div>
-            <button type="button" hx-delete="/delete/block" hx-target="#draggable" hx-swap="outerHTML">Delete</button>
-        </div>
-    </ul>
-    <ul id="sortable2">
-        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 1</li>
-        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 2</li>
-        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 3</li>
-        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 4</li>
-        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 5</li>
-        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 6</li>
-        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 7</li>
-      </ul>
 </body>
