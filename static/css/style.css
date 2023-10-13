@@ -1,0 +1,7 @@
+.ui-widget-content { 
+    position: relative;
+    display: inline-block;
+    resize: both;
+    border: 1px solid black;
+    background-color: skyblue; 
+}

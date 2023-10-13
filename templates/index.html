@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://unpkg.com/htmx.org@1.9.6"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css') }}"/>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <style>
+        #draggable { width: 150px; height: 150px; padding: 0.5em; }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script>
+        $( function() {
+          $( "#draggable" ).draggable();
+        } );
+        $( function() {
+          $( "#sortable1" ).sortable();
+        } );
+        $( function() {
+          $( "#sortable2" ).sortable();
+        } );
+    </script>
+</head>
+<body>
+    <ul id="sortable1">
+        <button id="add_button"
+                type="button" 
+                hx-post="/add/block"
+                hx-target="#add_button"
+                hx-swap="afterend">Add Block</button>
+    
+        <div id="draggable" class="ui-state-default">
+            <p>Drag me around</p>
+            <div id="editable" contentEditable="true"></div>
+            <button type="button" hx-delete="/delete/block" hx-target="#draggable" hx-swap="outerHTML">Delete</button>
+        </div>
+        <div id="draggable" class="ui-state-default">
+            <p>Drag me around</p>
+            <div id="editable" contentEditable="true"></div>
+            <button type="button" hx-delete="/delete/block" hx-target="#draggable" hx-swap="outerHTML">Delete</button>
+        </div>
+    </ul>
+    <ul id="sortable2">
+        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 1</li>
+        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 2</li>
+        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 3</li>
+        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 4</li>
+        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 5</li>
+        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 6</li>
+        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 7</li>
+      </ul>
+</body>
