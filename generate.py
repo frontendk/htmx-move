@@ -42,6 +42,7 @@ def new_textarea():
             HTMLTextAreaElement.prototype.setCaretPosition = function (position) {
                 this.selectionStart = position;
                 this.selectionEnd = position;
+                this.focus();
             };
         </script>
         <textarea 
@@ -49,12 +50,14 @@ def new_textarea():
             hx-on:keydown="
                 var textarea = this; 
                 if (event.keyCode == 9) {
+                        event.preventDefault();
                         var newCaretPosition;
                         newCaretPosition = textarea.selectionStart + '    '.length;
                         textarea.value = textarea.value.substring(0, textarea.selectionStart) + '    ' + textarea.value.substring(textarea.selectionStart, textarea.value.length);
                         textarea.setCaretPosition(newCaretPosition);
                         return false;
                     }"
+            onkeydown="this.focus();"
             class="text-area"></textarea>
     </form>
 """

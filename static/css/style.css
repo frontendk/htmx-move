@@ -38,7 +38,7 @@ button {
 }
 
 .text-area {
-    min-width: 100%;
+    width: 100%;
     border-radius: 10px;
     padding: 5%;
 }
