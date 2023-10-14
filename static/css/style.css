@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    background-color: #ffffff;
 }
 
 * {box-sizing: border-box;}
@@ -9,9 +10,13 @@ body {
     position: relative;
     display: inline-block;
     resize: both;
-    border: 5px solid rgba(163, 163, 163, 0.729);
-    background-color: none;
-    border-radius: 20px; 
+    border-top: 8px solid #042951;
+    border-bottom: 2px solid #aeaeaed4;
+    border-left:2px solid #aeaeaed4;
+    border-right: 2px solid #aeaeaed4;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: rgba(173, 171, 171, 0.334);
     padding: 10px;
     padding-bottom: 5px;
     padding-right: 36px;
@@ -33,9 +38,14 @@ button {
     min-height: 10px;
     border-radius: 10px;
     border-color: gray;
-    background-color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    display: inline;
+    background-color: #ffffff;
+    font-family: cursive;
+    font-size: 16px;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    fill: black;
 }
 
 .button-delete{
@@ -46,10 +56,11 @@ button {
 }
 
 .text-area {
-    max-width: 90%;
+    max-width: 95%;
     border-radius: 10px;
     padding: 5%;
     margin: 10px;
+    border: 5px solid rgba(173, 171, 171, 0.334); 
 }
 
 .container, .container-inner {
@@ -76,19 +87,29 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 2em;
+    padding: 0.5em;
     z-index: 9;
     transition: 0.7s;
-    color: #fff;
+    background: #ffffff;
+    border-bottom: 2mm ridge rgba(215, 215, 215, 0.6);
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .brand {
     font-size: 1.6em;
     display: inline;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
 }
 
 #new_block_button {
     width: 100%;
+    background-color: #042951;
+    color:#ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    justify-content: space-evenly;
+    font-style: normal;
+
 }
 
 nav .container-inner {
@@ -100,7 +121,7 @@ nav .container-inner {
 
 nav .container ul {
     width: 100%;
-    margin: 0 1em;
+    margin: 0 2em;
 }    
 
 nav .container ul:nth-child(2) {
@@ -109,12 +130,12 @@ nav .container ul:nth-child(2) {
 
 nav .container ul li {
     display: inline-block;
-    margin: 0 0.7em;
+    margin: 0 2em;
 }
 
 nav a {
     text-decoration: none;
-    font-size: 0.9em;
+    font-size: 1.1em;
     transition: 0.3s;
     font-weight: 600;
     color:black;
@@ -146,4 +167,21 @@ form input:focus {
     outline: none;
 }
 
+#menu-btn {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    list-style: none;
+    font-style: normal;
+}
+
+i li a {
+    margin-right: 30px;
+    border-radius: 15px;
+    background-color: #042951;
+    padding: 10px;
+    color:#ffffff;
+    display: flex;
+}
 

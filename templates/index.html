@@ -25,7 +25,7 @@
                         hx-post="/add/block"
                         hx-target="#body-div"
                         hx-swap="afterend">
-                        <img src="/static/images/plus.svg" width="30px" height="30px"></img>Kernel
+                        <img src="/static/images/plus-main.svg" width="20px" height="20px"></img> Kernel
                     </button>
                 </div>
                 <div class="container-inner">
@@ -34,26 +34,12 @@
                         <li><a href="#">About</a></li>
                         <li><a href="#">Contact</a></li>
                     </ul>
-                    <form>
-                        <div class="input-wrap">
-                            <input
-                                type="search"
-                                placeholder="Search..."/>
-                            <button typy="submit">
-                                <i class="fas fa-search"></i>
-                            </button>
-                        </div>
-                    </form>
                 </div>
-                <i class="fas fa-bars" id="menu-btn"></i>
+                <i class="fas fa-bars" id="menu-btn">
+                    <li><a href="#">Sign in</a></li>
+                    <img src="/static/images/menu.svg" width="40px" height="40px"></img>
+                </i>
             </div>
-            <!-- <button id="new_block_button"
-                type="button" 
-                hx-post="/add/block"
-                hx-target="#body-div"
-                hx-swap="afterend">
-                <img src="/static/images/plus.svg"></img>Kernel
-            </button> -->
         </nav>
     </header>
     <div id="body-div"></div>
