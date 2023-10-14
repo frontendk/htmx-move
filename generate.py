@@ -58,7 +58,7 @@ def new_textarea():
                         return false;
                     }"
             onkeydown="this.focus();"
-            class="text-area" style="width: 100%;"></textarea>
+            class="text-area" ></textarea>
     </form>
 """
 
